@@ -1,0 +1,96 @@
+@use "../partials/typography" as *;
+@use "../partials/breakpoints" as *;
+
+$primary-color: #323232;
+
+.about {
+  padding: 0 1rem;
+
+  @include media-tablet {
+    padding: 0 3rem;
+  }
+  @include media-desktop {
+    padding: 0 5rem;
+  }
+
+  &__heading {
+    @include fontBold;
+    font-size: 3rem;
+    color: $primary-color;
+
+    @include media-tablet {
+      font-size: 2rem;
+    }
+    @include media-desktop {
+      margin: 2rem 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 50vh;
+
+    @include media-tablet {
+      padding: 0 4rem;
+      height: 65vh;
+    }
+    @include media-desktop {
+      padding: 0 6rem;
+      height: 78vh;
+    }
+  }
+
+  &__quote {
+    @include fontDemi;
+    font-size: 1.6rem;
+    color: $primary-color;
+    width: 100%;
+    margin: 1rem 0;
+    line-height: 2.2rem;
+
+    @include media-tablet {
+      padding: 0 4rem;
+    }
+    @include media-desktop {
+      padding-left: 6rem;
+      padding-right: 14rem;
+    }
+  }
+
+  &__sub-heading {
+    @include fontRegular;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #000;
+
+    @include media-tablet {
+      @include fontDemi;
+      padding: 0 4rem;
+    }
+    @include media-desktop {
+      padding: 1rem 6rem;
+    }
+  }
+  @include media-desktop {
+    &__sub-heading-author {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__paragraph {
+    @include fontRegular;
+    font-size: 1.2rem;
+    color: $primary-color;
+    line-height: 2rem;
+
+    @include media-tablet {
+      display: flex;
+      padding: 0 4rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @include media-desktop {
+      padding: 0 6rem;
+    }
+  }
+}
