@@ -471,7 +471,7 @@ body {
     justify-content: space-between;
     padding: 2rem 0;
   }
-  .footer__flex-sec {
+  .footer__flex-section {
     display: flex;
   }
   .footer__flex-details {
