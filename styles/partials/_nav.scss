@@ -29,11 +29,11 @@ $primary-color: #323232;
     width: 40%;
     @include media-tablet {
       margin: 0 3rem;
-      width: 17%;
+      width:45%;
     }
     @include media-desktop {
       margin-left: 5rem;
-      width: 10%;
+      width: 60%;
     }
   }
 

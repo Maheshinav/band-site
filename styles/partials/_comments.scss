@@ -1,0 +1,128 @@
+@use "./typography" as *;
+@use "./breakpoints" as *;
+
+$primary-color: #323232;
+.comments {
+  padding: 0 1rem;
+  @include media-tablet {
+    padding: 0 3rem;
+  }
+  @include media-desktop {
+    padding: 0 5rem;
+  }
+
+  &__form-container {
+    display: flex;
+    border-bottom: 0.1rem solid #afafaf;
+    margin-bottom: 0.5rem;
+
+    @include media-tablet {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+    @include media-desktop {
+      margin-bottom: 0.5rem;
+      margin-left: 12rem;
+      margin-right: 12rem;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  &__heading {
+    @include fontBold;
+    font-size: 2rem;
+    color: $primary-color;
+  }
+
+  &__label {
+    @include fontDemi;
+    line-height: 2rem;
+    color: #afafaf;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__input-area {
+    margin-bottom: 2rem;
+  }
+
+  &__input-name {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1.1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+
+    @include media-tablet {
+      padding: 0.8rem;
+    }
+  }
+  &__input-comment {
+    width: 100%;
+    padding: 1.1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+    height: 10rem;
+
+    @include media-tablet {
+      height: 6rem;
+    }
+  }
+  &__input-placeholder::placeholder {
+    @include fontRegular;
+    color: black;
+    font-size: 1rem;
+
+    @include media-tablet {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__photo {
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-color: #afafaf;
+    height: 2.25rem;
+    width: 2.25rem;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 2.7rem;
+
+    @include media-tablet {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  &__button {
+    @include fontDemi;
+    background-color: #323232;
+    color: #ffff;
+    border-radius: 0.26rem;
+    height: 12vh;
+    margin-bottom: 10%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include media-tablet {
+      width: 25%;
+      font-size: 1rem;
+      height: 40px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    @include media-tablet {
+      justify-content: flex-end;
+    }
+  }
+}

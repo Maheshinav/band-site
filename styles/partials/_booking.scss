@@ -1,0 +1,42 @@
+@use "./typography" as *;
+@use "./breakpoints" as *;
+
+.shows{
+    background-color: #FFFF;
+    padding: 0 1rem;
+
+    &__heading{
+        @include fontDemi;
+        font-size: 2rem;
+    }
+
+    &__input{
+        @include fontDemi;
+        line-height: 2rem;
+        color: #afafaf;
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      
+    }
+
+    &__list{
+        list-style-type: none;
+        padding:0;
+    }
+
+    &__date{
+        @include fontDemi;
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+
+    &__details{
+        @include fontRegular;
+        color:black;
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+
+}
+

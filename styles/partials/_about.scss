@@ -36,7 +36,7 @@ $primary-color: #323232;
     }
     @include media-desktop {
       padding: 0 6rem;
-      height: 78vh;
+      height: 100%;
     }
   }
 
@@ -88,6 +88,8 @@ $primary-color: #323232;
       padding: 0 4rem;
       font-size: 1rem;
       line-height: 1.5;
+      gap:2rem;
+  
     }
     @include media-desktop {
       padding: 0 6rem;
