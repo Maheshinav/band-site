@@ -1,5 +1,6 @@
 @use "./typography" as *;
 @use "./breakpoints" as *;
+@use "./variables" as *;
 
 .show-hero {
   position: relative;
@@ -9,11 +10,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: solid 1px #e1e1e1;
+  border-bottom: solid 1px $secondary-mercury;
 
-  @include media-desktop{
-    display:flex;
-    
+  @include media-desktop {
+    display: flex;
+
   }
 
   &__overlay {
@@ -25,7 +26,7 @@
     padding: 0 1rem;
     background-color: rgba(32, 32, 32, 0.5);
 
-    @include media-desktop{
+    @include media-desktop {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -35,7 +36,7 @@
 
   &__sub-heading {
     @include fontRegular;
-    color: #ffff;
+    color: $primary-white;
     margin: auto;
     line-height: 2rem;
     font-size: 1.4rem;
@@ -44,9 +45,12 @@
     @include media-tablet {
       @include fontBold;
     }
-    
 
-   
+    @include media-desktop {
+      @include fontDemi;
+      font-size: 1.8rem;
+    }
+
   }
 
   &__heading {
@@ -74,7 +78,7 @@
     height: 28vh;
     border-radius: 0.3rem;
 
-    
+
     @include media-tablet {
       width: 45%;
       height: 25vh;
@@ -82,7 +86,7 @@
 
     @include media-desktop {
       width: 40%;
-    height: 25vh;
+      height: 25vh;
     }
   }
 }

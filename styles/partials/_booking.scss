@@ -1,42 +1,150 @@
 @use "./typography" as *;
 @use "./breakpoints" as *;
+@use "./variables" as *;
 
-.shows{
-    background-color: #FFFF;
+.shows {
+  background-color: $primary-white;
+
+  @include media-desktop {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3rem;
+
+  }
+
+  &__heading {
+    @include fontDemi;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0;
+
+    @include media-desktop {
+      padding-top: 3rem;
+    }
+  }
+
+  &__input {
+    @include fontDemi;
+    line-height: 2rem;
+    color: $primary-silver;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  &__table {
     padding: 0 1rem;
 
-    &__heading{
-        @include fontDemi;
-        font-size: 2rem;
+    @include media-tablet {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: $secondary-alabaster;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: $secondary-mercury;
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__date {
+    @include fontDemi;
+    font-size: 1rem;
+    margin-top: 0;
+    color: $primary-silver;
+    text-transform: uppercase;
+  }
+
+  &__details {
+    @include fontRegular;
+    color: $secondary-black;
+    font-size: 1.2rem;
+    margin-top: 0;
+
+  }
+
+
+
+
+  &__table-row {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem 1rem 1rem 0rem
+  }
+
+  &__button {
+    @include fontDemi;
+    background-color: $primary-black;
+    color: $primary-white;
+    border-radius: 0.4rem;
+    height: 9vh;
+    margin-bottom: 5%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include media-tablet {
+      width: 25%;
+      height: 9vh;
+      font-size: 1.2rem;
+      margin: 0;
     }
 
-    &__input{
-        @include fontDemi;
-        line-height: 2rem;
-        color: #afafaf;
-        font-size: 1rem;
-        text-transform: uppercase;
-        margin-bottom: 0;
-      
+
+    @include media-desktop {
+      height: 7vh;
     }
 
-    &__list{
-        list-style-type: none;
-        padding:0;
+    &:hover {
+      background-color: $secondary-black;
+      cursor: pointer;
+    }
+  }
+
+  &__table-container {
+    @include media-tablet {
+
+      display: flex;
+      width: 80%;
+      justify-content: space-around;
+
+
+
+
     }
 
-    &__date{
-        @include fontDemi;
-        font-size: 1.2rem;
-        margin-top: 0;
+    @include media-desktop {
+      justify-content: space-around;
     }
 
-    &__details{
-        @include fontRegular;
-        color:black;
-        font-size: 1.2rem;
-        margin-top: 0;
-    }
+  }
 
+  &__booking {
+    border-bottom: 1px solid $secondary-mercury;
+
+    @include media-desktop {
+      width: 100%;
+    }
+  }
+
+  &__table-width {
+    @include media-desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      width: 70%;
+
+    }
+  }
 }
-

@@ -1,10 +1,10 @@
 @use "../partials/typography" as *;
 @use "../partials/breakpoints" as *;
+@use "./variables" as *;
 
-$primary-color: #323232;
 
 .nav {
-  background-color: $primary-color;
+  background-color: $primary-black;
 
   @include media-tablet {
     display: flex;
@@ -16,6 +16,7 @@ $primary-color: #323232;
     display: flex;
     text-align: center;
     margin: 0;
+
     @include media-tablet {
       align-items: center;
     }
@@ -27,13 +28,18 @@ $primary-color: #323232;
     display: block;
     padding: 1.3rem 0;
     width: 40%;
+
     @include media-tablet {
       margin: 0 3rem;
-      width:45%;
+      width: 45%;
+      height: 13vh;
     }
+
     @include media-desktop {
       margin-left: 5rem;
-      width: 60%;
+      width: 40%;
+      font-size: 1.5rem;
+      line-height: 3rem;
     }
   }
 
@@ -50,31 +56,33 @@ $primary-color: #323232;
       height: 100%;
       padding: 1.6rem 0;
     }
+
     @include media-desktop {
-      font-size: 1rem;
+      font-size: 1.4rem;
+      line-height: 3rem;
     }
 
     &:hover {
-      border-bottom: 0.3rem solid #ffff;
+      border-bottom: 0.3rem solid $primary-white;
       font-weight: bold;
     }
 
     &:active {
-      border-bottom: 0.3rem solid #ffff;
+      border-bottom: 0.3rem solid $primary-white;
       font-weight: bold;
     }
   }
 
   &__link {
     text-decoration: none;
-    color: #e1e1e1;
+    color: $secondary-mercury;
 
     &:hover {
-      color: #ffff;
+      color: $primary-white;
     }
 
     &:active {
-      color: #ffff;
+      color: $primary-white;
     }
   }
 }

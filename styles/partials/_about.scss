@@ -1,7 +1,7 @@
 @use "../partials/typography" as *;
 @use "../partials/breakpoints" as *;
+@use "./variables" as *;
 
-$primary-color: #323232;
 
 .about {
   padding: 0 1rem;
@@ -9,18 +9,20 @@ $primary-color: #323232;
   @include media-tablet {
     padding: 0 3rem;
   }
+
   @include media-desktop {
     padding: 0 5rem;
   }
 
   &__heading {
     @include fontBold;
-    font-size: 3rem;
-    color: $primary-color;
+    font-size: 2.5rem;
+    color: $primary-black;
 
     @include media-tablet {
       font-size: 2rem;
     }
+
     @include media-desktop {
       margin: 2rem 0;
     }
@@ -34,6 +36,7 @@ $primary-color: #323232;
       padding: 0 4rem;
       height: 65vh;
     }
+
     @include media-desktop {
       padding: 0 6rem;
       height: 100%;
@@ -42,8 +45,8 @@ $primary-color: #323232;
 
   &__quote {
     @include fontDemi;
-    font-size: 1.6rem;
-    color: $primary-color;
+    font-size: 1.4rem;
+    color: $primary-black;
     width: 100%;
     margin: 1rem 0;
     line-height: 2.2rem;
@@ -51,6 +54,7 @@ $primary-color: #323232;
     @include media-tablet {
       padding: 0 4rem;
     }
+
     @include media-desktop {
       padding-left: 6rem;
       padding-right: 14rem;
@@ -60,27 +64,31 @@ $primary-color: #323232;
   &__sub-heading {
     @include fontRegular;
     font-weight: 500;
-    font-size: 1.6rem;
-    color: #000;
+    font-size: 1.4rem;
+    color: $secondary-black;
 
     @include media-tablet {
       @include fontDemi;
       padding: 0 4rem;
     }
+
     @include media-desktop {
       padding: 1rem 6rem;
     }
   }
+
   @include media-desktop {
     &__sub-heading-author {
       font-size: 1.2rem;
     }
   }
 
+
+
   &__paragraph {
     @include fontRegular;
     font-size: 1.2rem;
-    color: $primary-color;
+    color: $primary-black;
     line-height: 2rem;
 
     @include media-tablet {
@@ -88,9 +96,10 @@ $primary-color: #323232;
       padding: 0 4rem;
       font-size: 1rem;
       line-height: 1.5;
-      gap:2rem;
-  
+      gap: 2rem;
+
     }
+
     @include media-desktop {
       padding: 0 6rem;
     }
