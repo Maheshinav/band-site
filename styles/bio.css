@@ -46,13 +46,16 @@
 @media (min-width: 768px) {
   .nav__logo {
     margin: 0 3rem;
-    width: 17%;
+    width: 45%;
+    height: 13vh;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .nav__logo {
     margin-left: 5rem;
-    width: 10%;
+    width: 40%;
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
 }
 .nav__list-item {
@@ -71,17 +74,18 @@
     padding: 1.6rem 0;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .nav__list-item {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
   }
 }
 .nav__list-item:hover {
-  border-bottom: 0.3rem solid white;
+  border-bottom: 0.3rem solid #ffffff;
   font-weight: bold;
 }
 .nav__list-item:active {
-  border-bottom: 0.3rem solid white;
+  border-bottom: 0.3rem solid #ffffff;
   font-weight: bold;
 }
 .nav__link {
@@ -89,10 +93,10 @@
   color: #e1e1e1;
 }
 .nav__link:hover {
-  color: white;
+  color: #ffffff;
 }
 .nav__link:active {
-  color: white;
+  color: #ffffff;
 }
 
 body {
@@ -135,7 +139,7 @@ body {
     padding: 0 2.5rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .hero-image__overlay {
     padding: 0 5rem;
   }
@@ -143,11 +147,16 @@ body {
 .hero-image__text {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 700;
-  color: white;
+  color: #ffffff;
   margin: 0;
   font-size: 2.6rem;
 }
 @media (min-width: 768px) {
+  .hero-image__text {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1200px) {
   .hero-image__text {
     font-size: 3.5rem;
   }
@@ -161,7 +170,7 @@ body {
     padding: 0 3rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about {
     padding: 0 5rem;
   }
@@ -169,7 +178,7 @@ body {
 .about__heading {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -177,7 +186,7 @@ body {
     font-size: 2rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__heading {
     margin: 2rem 0;
   }
@@ -192,16 +201,16 @@ body {
     height: 65vh;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__image {
     padding: 0 6rem;
-    height: 78vh;
+    height: 100%;
   }
 }
 .about__quote {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #323232;
   width: 100%;
   margin: 1rem 0;
@@ -212,7 +221,7 @@ body {
     padding: 0 4rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__quote {
     padding-left: 6rem;
     padding-right: 14rem;
@@ -222,8 +231,8 @@ body {
   font-family: "Avenir Next", Arial, sans-serif;
   font-weight: 400;
   font-weight: 500;
-  font-size: 1.6rem;
-  color: #000;
+  font-size: 1.4rem;
+  color: #000000;
 }
 @media (min-width: 768px) {
   .about__sub-heading {
@@ -232,12 +241,12 @@ body {
     padding: 0 4rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__sub-heading {
     padding: 1rem 6rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__sub-heading-author {
     font-size: 1.2rem;
   }
@@ -255,16 +264,17 @@ body {
     padding: 0 4rem;
     font-size: 1rem;
     line-height: 1.5;
+    gap: 2rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .about__paragraph {
     padding: 0 6rem;
   }
 }
 
 .gallery {
-  padding: 0 1.2rem;
+  padding: 2rem 1.2rem;
   background-color: #fafafa;
 }
 @media (min-width: 768px) {
@@ -272,7 +282,7 @@ body {
     padding: 0 3rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .gallery {
     padding: 0 5rem;
   }
@@ -280,8 +290,9 @@ body {
 .gallery__heading {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #323232;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .gallery__heading {
@@ -289,7 +300,7 @@ body {
     margin-bottom: 0;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .gallery__heading {
     font-size: 2rem;
     padding: 2rem 0;
@@ -326,14 +337,14 @@ body {
 .footer {
   background-color: #323232;
   padding: 0 1.2rem;
-  color: white;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .footer {
     padding: 0 3rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .footer {
     padding: 0 5rem;
   }
@@ -390,7 +401,7 @@ body {
     margin-right: 2rem;
   }
 }
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
   .footer__list {
     margin-right: 8rem;
   }
@@ -494,10 +505,212 @@ body {
     margin: 0;
   }
 }
-@media (min-width: 768px) and (min-width: 1199px) {
+@media (min-width: 768px) and (min-width: 1200px) {
   .footer__logo-tab {
     margin-left: 6rem;
     width: 10vw;
     margin-right: 3rem;
   }
+}
+
+.comments {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .comments {
+    padding: 0;
+  }
+}
+.comments__form {
+  width: 100%;
+}
+.comments__form-container {
+  display: flex;
+  border-bottom: 0.1rem solid #e1e1e1;
+  margin-bottom: 0.5rem;
+}
+.comments__heading {
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .comments__heading {
+    padding: 4rem 0 0 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .comments__heading {
+    padding: 4rem 0 0 5rem;
+  }
+}
+.comments__label {
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #afafaf;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.comments__input-area {
+  margin-bottom: 2rem;
+}
+.comments__input-name {
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1.1rem;
+  border: 0.1rem solid #afafaf;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
+  height: 3.5rem;
+}
+@media (min-width: 768px) {
+  .comments__input-name {
+    padding: 0.8rem;
+  }
+}
+.comments__input-comment {
+  width: 100%;
+  padding: 1.1rem;
+  border: 0.1rem solid #afafaf;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
+  height: 10rem;
+}
+@media (min-width: 768px) {
+  .comments__input-comment {
+    height: 6rem;
+  }
+}
+.comments__input-placeholder::-moz-placeholder {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 1rem;
+}
+.comments__input-placeholder::placeholder {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .comments__input-placeholder::-moz-placeholder {
+    font-size: 0.8rem;
+  }
+  .comments__input-placeholder::placeholder {
+    font-size: 0.8rem;
+  }
+}
+.comments__photo {
+  background-image: url(../../assets/images/Mohan-muruge.jpg);
+  background-color: #afafaf;
+  height: 2.25rem;
+  width: 2.25rem;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-top: 2.7rem;
+}
+@media (min-width: 768px) {
+  .comments__photo {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.comments__button {
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 600;
+  background-color: #323232;
+  color: #ffffff;
+  border-radius: 0.26rem;
+  height: 12vh;
+  margin-bottom: 10%;
+  width: 100%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .comments__button {
+    width: 35%;
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+}
+.comments__button:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+.comments__button-container {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .comments__button-container {
+    justify-content: flex-end;
+  }
+}
+.comments__new-comments {
+  padding-bottom: 1rem;
+}
+.comments__image-placeholder {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #e1e1e1;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.comments__image-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 1rem;
+}
+.comments__comment-data {
+  width: 90%;
+  color: #1f1f1f;
+  margin-left: 0.5rem;
+}
+.comments__time-datset {
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comments__wrapper {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+  font-size: 1.2;
+  word-wrap: break-word;
+}
+.comments__error {
+  border: 1px solid #aa2323;
+}
+.comments__success {
+  border-color: #000000;
+}
+.comments__date {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-weight: 400;
+  color: #afafaf;
+}
+.comments__section-setwidth {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .comments__section-setwidth {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .comments__section-setwidth {
+    width: 50%;
+  }
+}
+.comments__section-setcenter {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=bio.css.map */

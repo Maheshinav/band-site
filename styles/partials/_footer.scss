@@ -1,16 +1,16 @@
 @use "./typography" as *;
 @use "./breakpoints" as *;
-
-$primary-color: #323232;
+@use "./variables" as *;
 
 .footer {
-  background-color: $primary-color;
+  background-color: $primary-black;
   padding: 0 1.2rem;
-  color: white;
+  color: $primary-white;
 
   @include media-tablet {
     padding: 0 3rem;
   }
+
   @include media-desktop {
     padding: 0 5rem;
   }
@@ -34,6 +34,7 @@ $primary-color: #323232;
       margin: 0;
     }
   }
+
   &__social-icon {
     width: 3rem;
     height: auto;
@@ -44,10 +45,12 @@ $primary-color: #323232;
       margin-right: 1rem;
     }
   }
+
   &__social-icon-fb {
     width: 1.7rem;
     height: auto;
     margin-right: 3rem;
+
     @include media-tablet {
       width: 1.3rem;
       margin-right: 1rem;
@@ -61,6 +64,7 @@ $primary-color: #323232;
     @include media-tablet {
       margin-right: 2rem;
     }
+
     @include media-desktop {
       margin-right: 8rem;
     }
@@ -76,6 +80,7 @@ $primary-color: #323232;
       font-size: 0.9rem;
     }
   }
+
   &__list-item-details {
     @include fontRegular;
     font-size: 1.2rem;
@@ -97,9 +102,11 @@ $primary-color: #323232;
       margin-bottom: 0;
     }
   }
+
   &__list-item-text {
     margin: 0;
   }
+
   &__logo-zone {
     margin-left: 0;
     margin-bottom: 0;
@@ -118,6 +125,7 @@ $primary-color: #323232;
       width: 50%;
     }
   }
+
   &__copyright {
     @include fontRegular;
     margin: 0;
@@ -135,9 +143,11 @@ $primary-color: #323232;
       justify-content: space-between;
       padding: 2rem 0;
     }
+
     &__flex-section {
       display: flex;
     }
+
     &__flex-details {
       display: flex;
       align-items: center;
@@ -156,9 +166,11 @@ $primary-color: #323232;
       margin-left: 6rem;
       width: 17vw;
     }
+
     &__logo-hide {
       margin: 0;
     }
+
     @include media-desktop {
       &__logo-tab {
         margin-left: 6rem;
