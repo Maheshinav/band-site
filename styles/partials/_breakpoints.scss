@@ -1,5 +1,5 @@
 $tablet-breakpoint: 768px;
-$dekstop-breakpoint: 1200px;
+$desktop-breakpoint: 1280px;
 
 @mixin media-tablet {
   @media (min-width: $tablet-breakpoint) {
@@ -8,7 +8,7 @@ $dekstop-breakpoint: 1200px;
 }
 
 @mixin media-desktop {
-  @media (min-width: $dekstop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     @content;
   }
 }
