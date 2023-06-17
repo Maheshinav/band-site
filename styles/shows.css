@@ -50,7 +50,7 @@
 .show-hero__sub-heading {
   font-family: "Avenir Next", Arial, sans-serif;
   font-weight: 400;
-  color: white;
+  color: #ffffff;
   margin: auto;
   line-height: 2rem;
   font-size: 1.4rem;
@@ -60,6 +60,13 @@
   .show-hero__sub-heading {
     font-family: "Avenir Nextt", Arial, sans-serif;
     font-weight: 700;
+  }
+}
+@media (min-width: 1200px) {
+  .show-hero__sub-heading {
+    font-family: "Avenir Nextt", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
   }
 }
 .show-hero__heading {
@@ -103,22 +110,51 @@
 }
 
 .shows {
-  background-color: white;
-  padding: 0 1rem;
+  background-color: #ffffff;
+}
+@media (min-width: 1200px) {
+  .shows {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3rem;
+  }
 }
 .shows__heading {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 600;
   font-size: 2rem;
+  padding: 1rem;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .shows__heading {
+    padding-top: 3rem;
+  }
 }
 .shows__input {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 600;
   line-height: 2rem;
   color: #afafaf;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+.shows__table {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .shows__table {
+    display: flex;
+    align-items: center;
+  }
+  .shows__table:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+  .shows__table:active {
+    background-color: #e1e1e1;
+  }
 }
 .shows__list {
   list-style-type: none;
@@ -127,15 +163,82 @@
 .shows__date {
   font-family: "Avenir Nextt", Arial, sans-serif;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 0;
+  color: #afafaf;
+  text-transform: uppercase;
 }
 .shows__details {
   font-family: "Avenir Next", Arial, sans-serif;
   font-weight: 400;
-  color: black;
+  color: #000000;
   font-size: 1.2rem;
   margin-top: 0;
+}
+.shows__table-row {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 1rem 1rem 1rem 0rem;
+}
+.shows__button {
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 600;
+  background-color: #323232;
+  color: #ffffff;
+  border-radius: 0.4rem;
+  height: 9vh;
+  margin-bottom: 5%;
+  width: 100%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .shows__button {
+    width: 25%;
+    height: 9vh;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .shows__button {
+    height: 7vh;
+  }
+}
+.shows__button:hover {
+  background-color: #000000;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .shows__table-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1200px) {
+  .shows__table-container {
+    justify-content: space-around;
+  }
+}
+.shows__booking {
+  border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 1200px) {
+  .shows__booking {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .shows__table-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 70%;
+  }
 }
 
 .nav {
@@ -169,12 +272,15 @@
   .nav__logo {
     margin: 0 3rem;
     width: 45%;
+    height: 13vh;
   }
 }
 @media (min-width: 1200px) {
   .nav__logo {
     margin-left: 5rem;
-    width: 60%;
+    width: 40%;
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
 }
 .nav__list-item {
@@ -195,15 +301,16 @@
 }
 @media (min-width: 1200px) {
   .nav__list-item {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
   }
 }
 .nav__list-item:hover {
-  border-bottom: 0.3rem solid white;
+  border-bottom: 0.3rem solid #ffffff;
   font-weight: bold;
 }
 .nav__list-item:active {
-  border-bottom: 0.3rem solid white;
+  border-bottom: 0.3rem solid #ffffff;
   font-weight: bold;
 }
 .nav__link {
@@ -211,10 +318,10 @@
   color: #e1e1e1;
 }
 .nav__link:hover {
-  color: white;
+  color: #ffffff;
 }
 .nav__link:active {
-  color: white;
+  color: #ffffff;
 }
 
 body {
@@ -235,7 +342,7 @@ body {
 .footer {
   background-color: #323232;
   padding: 0 1.2rem;
-  color: white;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .footer {
