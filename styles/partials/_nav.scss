@@ -2,13 +2,14 @@
 @use "../partials/breakpoints" as *;
 @use "./variables" as *;
 
-
-
 .nav {
   background-color: $primary-black;
+  display: flex;
+  flex-direction: column;
 
   @include media-tablet {
     display: flex;
+    flex-direction: row;
   }
 
   &__list {
@@ -21,6 +22,10 @@
     @include media-tablet {
       align-items: center;
     }
+
+    @include media-desktop {
+      margin-left: 4rem;
+    }
   }
 
   &__logo {
@@ -32,13 +37,14 @@
 
     @include media-tablet {
       margin: 0 3rem;
-      width: 45%;
-      height: 13vh;
+      width: 60%;
+      height: 95%;
     }
 
     @include media-desktop {
       margin-left: 5rem;
-      width: 40%;
+      width: 70%;
+      height: 95%;
       font-size: 1.5rem;
       line-height: 3rem;
     }
@@ -46,14 +52,20 @@
 
   &__list-item {
     @include fontRegular;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 50%;
     padding-bottom: 1rem;
+    &:hover,
+    &.active {
+      color: $primary-white;
+      font-weight: bold;
+      border-bottom: 0.3rem solid $primary-white;
+    }
 
     @include media-tablet {
       width: auto;
       margin: 0 1rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       height: 100%;
       padding: 1.6rem 0;
     }
@@ -62,28 +74,27 @@
       font-size: 1.4rem;
       line-height: 3rem;
     }
-
-    &:hover {
-      border-bottom: 0.3rem solid $primary-white;
+    &:hover,
+    &.active {
+      color: $primary-white;
       font-weight: bold;
-    }
-
-    &:active {
       border-bottom: 0.3rem solid $primary-white;
-      font-weight: bold;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $primary-white;
+      }
     }
   }
 
   &__link {
     text-decoration: none;
     color: $secondary-mercury;
-
-    &:hover {
-      color: $primary-white;
-    }
-
-    &:active {
-      color: $primary-white;
-    }
   }
 }

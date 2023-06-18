@@ -1,28 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const preExistingComments = [
-    {
-      name: "Connor Walton",
-      comment:
-        "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-      date: "02/17/2021",
-    },
-
-    {
-      name: "Emilie Beach",
-      comment:
-        "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive this would be it. What an incredible day.",
-      date: "01/09/2021",
-    },
-    {
-      name: "Miles Acosta",
-      comment:
-        "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-      date: "12/20/2020",
-    },
-  ];
 
   const commentsContainer = document.querySelector(".comments__new-comments");
-
+  let preExistingComments;
   function printExistingComments() {
     if (commentsContainer.children.length > 0) {
       return;
@@ -33,8 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
       commentsContainer.appendChild(commentArticle);
     });
   }
-
-  printExistingComments();
+  fetch("https://project-1-api.herokuapp.com/comments?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4")
+    .then(response => response.json())
+    .then(data => {
+      preExistingComments = data;
+      printExistingComments(); 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 
   document
     .querySelector(".comments__form")
@@ -46,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const nameValue = inputName.value.trim();
       const commentValue = inputComment.value.trim();
+
+
 
       if (nameValue === "" || commentValue === "") {
         inputName.classList.add("comments__error");
@@ -63,21 +51,47 @@ document.addEventListener("DOMContentLoaded", function () {
       const commentData = {
         name: nameValue,
         comment: commentValue,
-        date: currentDate,
+        timestamp: currentDate,
       };
+      const postData= {
+        name:nameValue,
+        comment:commentValue,
+      };
+      
       const commentArticle = createCommentElement(commentData);
 
       commentsContainer.insertBefore(
         commentArticle,
         commentsContainer.firstChild
       );
+      fetch("https://project-1-api.herokuapp.com/comments?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4", {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(postData)
+})
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Error: ' + response.status);
+    }
+  })
+  .then(data => {
+    console.log("Response:", data)
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
 
       inputName.value = "";
       inputComment.value = "";
     });
 
   function createCommentElement(commentData) {
-    const { name, comment, date } = commentData;
+    const { name, comment, timestamp } = commentData;
 
     const commentArticle = document.createElement("article");
     commentArticle.classList.add("comments__image-wrap");
@@ -95,7 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
     nameHeading.textContent = name;
 
     const dateset = document.createElement("p");
-    dateset.textContent = date;
+    currentDate = new Date(timestamp).toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
+    dateset.textContent = currentDate ;
     dateset.classList.add("comments__date");
 
     const commentParagraph = document.createElement("p");

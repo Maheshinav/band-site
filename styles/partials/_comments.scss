@@ -2,8 +2,6 @@
 @use "./breakpoints" as *;
 @use "./variables" as *;
 
-
-
 .comments {
   padding: 0 1rem;
 
@@ -13,19 +11,13 @@
 
   &__form {
     width: 100%;
-
   }
-
-
 
   &__form-container {
     display: flex;
     border-bottom: 0.1rem solid $secondary-mercury;
     margin-bottom: 0.5rem;
-
-
   }
-
 
   &__heading {
     @include fontBold;
@@ -106,13 +98,12 @@
     }
   }
 
-
   &__button {
     @include fontDemi;
     background-color: $primary-black;
     color: $primary-white;
     border-radius: 0.26rem;
-    height: 12vh;
+    height: 4.7rem;
     margin-bottom: 10%;
     width: 100%;
     font-size: 1.5rem;
@@ -141,8 +132,6 @@
 
   &__new-comments {
     padding-bottom: 1rem;
-
-
   }
 
   &__image-placeholder {
@@ -151,7 +140,6 @@
     background-color: $secondary-mercury;
     border-radius: 50%;
     margin-top: 1rem;
-
   }
 
   &__image-wrap {
@@ -185,7 +173,6 @@
     border: 1px solid #aa2323;
   }
 
-
   &__success {
     border-color: $secondary-black;
   }
@@ -193,7 +180,6 @@
   &__date {
     @include fontRegular;
     color: $primary-silver;
-
   }
 
   &__section-setwidth {

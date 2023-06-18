@@ -9,7 +9,6 @@
     display: flex;
     justify-content: space-around;
     padding-top: 3rem;
-
   }
 
   &__heading {
@@ -68,17 +67,13 @@
     color: $secondary-black;
     font-size: 1.2rem;
     margin-top: 0;
-
   }
-
-
-
 
   &__table-row {
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 1rem 1rem 1rem 0rem
+    padding: 1rem 1rem 1rem 0rem;
   }
 
   &__button {
@@ -86,7 +81,7 @@
     background-color: $primary-black;
     color: $primary-white;
     border-radius: 0.4rem;
-    height: 9vh;
+    height: 4.7rem;
     margin-bottom: 5%;
     width: 100%;
     font-size: 1.5rem;
@@ -95,14 +90,13 @@
 
     @include media-tablet {
       width: 25%;
-      height: 9vh;
+      height: 2.7rem;
       font-size: 1.2rem;
       margin: 0;
     }
 
-
     @include media-desktop {
-      height: 7vh;
+      height: 2.7rem;
     }
 
     &:hover {
@@ -113,20 +107,14 @@
 
   &__table-container {
     @include media-tablet {
-
       display: flex;
       width: 80%;
       justify-content: space-around;
-
-
-
-
     }
 
     @include media-desktop {
       justify-content: space-around;
     }
-
   }
 
   &__booking {
@@ -144,7 +132,6 @@
       align-items: center;
       margin-bottom: 1rem;
       width: 70%;
-
     }
   }
 }
