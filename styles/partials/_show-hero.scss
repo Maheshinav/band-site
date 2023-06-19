@@ -5,36 +5,36 @@
 .show-hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 29.5rem;
   background-image: url(../../assets/images/hero-shows.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: solid 1px $secondary-mercury;
 
-  
-  &__container {
-    height: 445px;
-
-    @include media-tablet {
-      height: 503px;
-    }
-
-    @include media-desktop {
-      height: 845px;
-    }
+  @include media-tablet {
+    height: 38.875rem;
   }
 
+  @include media-desktop {
+    height: 41.875rem;
+  }
   &__overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 472px;
     padding: 0 1rem;
     background-color: rgba(32, 32, 32, 0.5);
 
-    
+    @include media-tablet {
+      height: 622px;
+    }
+
+    @include media-desktop {
+      height: 670px;
+    }
   }
 
   &__content {
@@ -52,13 +52,11 @@
     line-height: 2rem;
     font-size: 1.4rem;
     padding-top: 3rem;
-    
-    &__sub-heading-container{
-      display:flex;
-     
-      @include media-desktop{
 
-      }
+    &__sub-heading-container {
+      display: flex;
+
+    
     }
 
     @include media-tablet {
@@ -84,8 +82,8 @@
     margin-bottom: 1.2rem;
 
     @include media-tablet {
-      font-size: 3.5rem;
-      line-height: 4rem;
+      font-size: 4rem;
+      line-height: 5rem;
       margin-left: 2rem;
     }
 
@@ -102,7 +100,7 @@
 
     @include media-tablet {
       width: 60%;
-      height: 8rem;
+      height: 11rem;
       margin-top: 2rem;
       margin-left: 2rem;
     }

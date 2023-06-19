@@ -64,9 +64,15 @@
 
   &__details {
     @include fontRegular;
-    color: $secondary-black;
+    color: $primary-black;
     font-size: 1.2rem;
     margin-top: 0;
+  }
+
+  &__first-iteration-style {
+    font-size: 1.2rem;
+    @include fontDemi;
+    color: $secondary-black;
   }
 
   &__table-row {

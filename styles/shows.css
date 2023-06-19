@@ -19,24 +19,21 @@
 .show-hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 29.5rem;
   background-image: url(../../assets/images/hero-shows.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: solid 1px #e1e1e1;
 }
-.show-hero__container {
-  height: 445px;
-}
 @media (min-width: 768px) {
-  .show-hero__container {
-    height: 503px;
+  .show-hero {
+    height: 38.875rem;
   }
 }
 @media (min-width: 1280px) {
-  .show-hero__container {
-    height: 845px;
+  .show-hero {
+    height: 41.875rem;
   }
 }
 .show-hero__overlay {
@@ -44,9 +41,19 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 472px;
   padding: 0 1rem;
   background-color: rgba(32, 32, 32, 0.5);
+}
+@media (min-width: 768px) {
+  .show-hero__overlay {
+    height: 622px;
+  }
+}
+@media (min-width: 1280px) {
+  .show-hero__overlay {
+    height: 670px;
+  }
 }
 @media (min-width: 1280px) {
   .show-hero__content {
@@ -95,8 +102,8 @@
 }
 @media (min-width: 768px) {
   .show-hero__heading {
-    font-size: 3.5rem;
-    line-height: 4rem;
+    font-size: 4rem;
+    line-height: 5rem;
     margin-left: 2rem;
   }
 }
@@ -114,7 +121,7 @@
 @media (min-width: 768px) {
   .show-hero__soundtrack {
     width: 60%;
-    height: 8rem;
+    height: 11rem;
     margin-top: 2rem;
     margin-left: 2rem;
   }
@@ -188,9 +195,15 @@
 .shows__details {
   font-family: "Avenir Next", Arial, sans-serif;
   font-weight: 400;
-  color: #000000;
+  color: #323232;
   font-size: 1.2rem;
   margin-top: 0;
+}
+.shows__first-iteration-style {
+  font-size: 1.2rem;
+  font-family: "Avenir Nextt", Arial, sans-serif;
+  font-weight: 600;
+  color: #000000;
 }
 .shows__table-row {
   display: flex;
@@ -316,7 +329,12 @@
   width: 50%;
   padding-bottom: 1rem;
 }
-.nav__list-item:hover, .nav__list-item.active {
+.nav__list-item.active {
+  color: #ffffff;
+  font-weight: bold;
+  border-bottom: 0.3rem solid #ffffff;
+}
+.nav__list-item:hover:not(.active) {
   color: #ffffff;
   font-weight: bold;
   border-bottom: 0.3rem solid #ffffff;
@@ -335,21 +353,6 @@
     font-size: 1.4rem;
     line-height: 3rem;
   }
-}
-.nav__list-item:hover, .nav__list-item.active {
-  color: #ffffff;
-  font-weight: bold;
-  border-bottom: 0.3rem solid #ffffff;
-  position: relative;
-}
-.nav__list-item:hover:after, .nav__list-item.active:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #ffffff;
 }
 .nav__link {
   text-decoration: none;
