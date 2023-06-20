@@ -70,6 +70,10 @@
     @include media-tablet {
       height: 6rem;
     }
+
+    @include media-desktop {
+      height: 9rem;
+    }
   }
 
   &__input-placeholder::placeholder {
@@ -115,9 +119,14 @@
       font-size: 1rem;
       height: 2.5rem;
     }
+    @include media-desktop {
+      width: 35%;
+      font-size: 1.5rem;
+      height: 3.5rem;
+    }
 
     &:hover {
-      background-color: #000;
+      background-color: $secondary-black;
       cursor: pointer;
     }
   }
@@ -151,11 +160,11 @@
 
   &__comment-data {
     width: 90%;
-    color: #1f1f1f;
+    color: $primary-black;
     margin-left: 0.5rem;
   }
 
-  &__time-datset {
+  &__timedata-set {
     @include fontDemi;
     display: flex;
     align-items: center;
@@ -197,5 +206,22 @@
   &__section-setcenter {
     display: flex;
     justify-content: center;
+  }
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__like {
+    display: flex;
+    margin: 0.3rem;
+    align-items: center;
+  }
+  &__delete-icon {
+    color: #aa2323;
+  }
+  &__like-icon {
+    color: rgb(255, 109, 255);
+    margin-right: 0.3rem;
   }
 }

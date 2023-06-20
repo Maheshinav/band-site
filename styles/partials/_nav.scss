@@ -6,7 +6,6 @@
   background-color: $primary-black;
   display: flex;
   flex-direction: column;
- 
 
   @include media-tablet {
     display: flex;
@@ -56,17 +55,22 @@
     font-size: 1.3rem;
     width: 50%;
     padding-bottom: 1rem;
+    color: $secondary-mercury;
+    border-bottom: none;
 
-     &.active {
+    &:hover {
       color: $primary-white;
       font-weight: bold;
       border-bottom: 0.3rem solid $primary-white;
     }
-   
-    &:hover:not(.active) {
+
+    &.active {
       color: $primary-white;
       font-weight: bold;
       border-bottom: 0.3rem solid $primary-white;
+      &:hover {
+        border-bottom: none;
+      }
     }
 
     @include media-tablet {
@@ -81,8 +85,6 @@
       font-size: 1.4rem;
       line-height: 3rem;
     }
-
-
   }
 
   &__link {

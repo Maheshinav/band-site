@@ -10,13 +10,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  @include media-tablet{
-    height:32rem;
+  @include media-tablet {
+    height: 32rem;
   }
 
-  @include media-desktop{
-    height:46rem;
-
+  @include media-desktop {
+    height: 46rem;
   }
 
   &__overlay {
@@ -32,12 +31,12 @@
 
     @include media-tablet {
       padding: 0 2.5rem;
-      height:513px;
+      height: 513px;
     }
 
     @include media-desktop {
       padding: 0 5rem;
-      height:736px;
+      height: 736px;
     }
   }
 

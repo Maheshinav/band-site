@@ -16,9 +16,16 @@
     font-size: 2rem;
     padding: 1rem;
     margin: 0;
+    color: $secondary-black;
+
+    @include media-tablet {
+      padding: 2rem;
+      font-size: 4rem;
+    }
 
     @include media-desktop {
-      padding-top: 3rem;
+      font-size: 3rem;
+      color: $primary-black;
     }
   }
 
@@ -40,10 +47,9 @@
 
       &:hover {
         background-color: $secondary-alabaster;
-        cursor: pointer;
       }
 
-      &:active {
+      &.selected {
         background-color: $secondary-mercury;
       }
     }
@@ -54,7 +60,7 @@
     padding: 0;
   }
 
-  &__date {
+  &__table-head {
     @include fontDemi;
     font-size: 1rem;
     margin-top: 0;
@@ -64,15 +70,13 @@
 
   &__details {
     @include fontRegular;
-    color: $primary-black;
+    color: $secondary-black;
     font-size: 1.2rem;
     margin-top: 0;
   }
-
-  &__first-iteration-style {
+  &__date-data {
     font-size: 1.2rem;
     @include fontDemi;
-    color: $secondary-black;
   }
 
   &__table-row {
@@ -87,7 +91,7 @@
     background-color: $primary-black;
     color: $primary-white;
     border-radius: 0.4rem;
-    height: 4.7rem;
+    height: 9vh;
     margin-bottom: 5%;
     width: 100%;
     font-size: 1.5rem;
@@ -95,14 +99,14 @@
     text-align: center;
 
     @include media-tablet {
-      width: 25%;
-      height: 2.7rem;
+      width: 34%;
+      height: 7vh;
       font-size: 1.2rem;
       margin: 0;
     }
 
     @include media-desktop {
-      height: 2.7rem;
+      height: 7vh;
     }
 
     &:hover {
