@@ -1,25 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const preExistingComments = [
-    {
-      name: "Connor Walton",
-      comment:
-        "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-      date: "02/17/2021",
-    },
-
-    {
-      name: "Emilie Beach",
-      comment:
-        "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive this would be it. What an incredible day.",
-      date: "01/09/2021",
-    },
-    {
-      name: "Miles Acosta",
-      comment:
-        "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-      date: "12/20/2020",
-    },
-  ];
+  let preExistingComments;
+  axios
+    .get(
+      "https://project-1-api.herokuapp.com/comments?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4"
+    )
+    .then((response) => {
+      preExistingComments = response.data;
+      printExistingComments();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 
   const commentsContainer = document.querySelector(".comments__new-comments");
 
@@ -33,8 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
       commentsContainer.appendChild(commentArticle);
     });
   }
-
-  printExistingComments();
 
   document
     .querySelector(".comments__form")
@@ -58,26 +47,40 @@ document.addEventListener("DOMContentLoaded", function () {
         inputComment.classList.add("comments__success");
       }
 
-      const currentDate = new Date().toLocaleDateString();
-
-      const commentData = {
+      const postData = {
         name: nameValue,
         comment: commentValue,
-        date: currentDate,
       };
-      const commentArticle = createCommentElement(commentData);
 
-      commentsContainer.insertBefore(
-        commentArticle,
-        commentsContainer.firstChild
-      );
+
+      axios
+        .post(
+          "https://project-1-api.herokuapp.com/comments?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4",
+          postData
+        )
+        .then((response) => {
+          console.log("Response:", response.data);
+
+
+          const createdComment = response.data;
+          const commentArticle = createCommentElement(createdComment);
+
+          commentsContainer.insertBefore(
+            commentArticle,
+            commentsContainer.firstChild
+          );
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
 
       inputName.value = "";
       inputComment.value = "";
+
     });
 
   function createCommentElement(commentData) {
-    const { name, comment, date } = commentData;
+    const { name, comment, timestamp, likes } = commentData;
 
     const commentArticle = document.createElement("article");
     commentArticle.classList.add("comments__image-wrap");
@@ -89,27 +92,97 @@ document.addEventListener("DOMContentLoaded", function () {
     innerArticle.classList.add("comments__comment-data");
 
     const nameAndDateArticle = document.createElement("article");
-    nameAndDateArticle.classList.add("comments__time-datset");
+    nameAndDateArticle.classList.add("comments__timedata-set");
 
     const nameHeading = document.createElement("h3");
     nameHeading.textContent = name;
 
     const dateset = document.createElement("p");
-    dateset.textContent = date;
+    currentDate = new Date(timestamp).toLocaleString("en-US", {
+      dateStyle: "short",
+      timeStyle: "short",
+    });
+    dateset.textContent = currentDate;
     dateset.classList.add("comments__date");
 
     const commentParagraph = document.createElement("p");
     commentParagraph.textContent = comment;
     commentParagraph.classList.add("comments__wrapper");
 
+    const commentAction = document.createElement("artical");
+    commentAction.classList.add("comments__action")
+
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fas", "fa-trash", "comments__delete-icon");
+    deleteIcon.addEventListener("click", function () {
+      deleteComment(commentData.id);
+      commentArticle.remove();
+    });
+
+    const commentLike = document.createElement("artical");
+    commentLike.classList.add("comments__like");
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-thumbs-up", "comments__like-icon");
+    likeIcon.addEventListener("click", function () {
+      likeComment(commentData.id);
+    });
+
+    const likeCount = document.createElement("p");
+    likeCount.textContent = likes;
+    likeCount.classList.add("comments__like-count");
+
+    commentLike.appendChild(likeIcon);
+    commentLike.appendChild(likeCount);
+
     nameAndDateArticle.appendChild(nameHeading);
     nameAndDateArticle.appendChild(dateset);
 
+    commentAction.appendChild(deleteIcon);
+    commentAction.appendChild(commentLike);
+
     innerArticle.appendChild(nameAndDateArticle);
     innerArticle.appendChild(commentParagraph);
+    innerArticle.appendChild(commentAction);
 
     commentArticle.appendChild(imagePlaceholder);
     commentArticle.appendChild(innerArticle);
+
+    function likeComment(commentId) {
+      axios
+        .put(
+          `https://project-1-api.herokuapp.com/comments/${commentId}/like?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4`
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            const updatedComment = response.data;
+            likeCount.textContent = updatedComment.likes;
+          } else {
+            throw new Error("Error: " + response.status);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+
+    function deleteComment(commentId) {
+      axios
+        .delete(
+          `https://project-1-api.herokuapp.com/comments/${commentId}?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4`
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            console.log("Comment deleted successfully");
+            commentArticle.remove();
+          } else {
+            throw new Error("Error: " + response.status);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
 
     return commentArticle;
   }

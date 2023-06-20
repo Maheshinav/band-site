@@ -1,35 +1,14 @@
-const tabData = [
-  {
-    date: "Mon Sept 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+let showsInfo;
+
+axios
+  .get("https://project-1-api.herokuapp.com/showdates?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4")
+  .then((response) => {
+    showsInfo = response.data;
+    renderTables(showsInfo);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 
 function createButton() {
   const button = document.createElement("button");
@@ -38,11 +17,21 @@ function createButton() {
   return button;
 }
 
+function handleTableClick(event) {
+  const innerArticles = document.querySelectorAll(".shows__table");
+  innerArticles.forEach((innerArticle) => {
+    innerArticle.classList.remove("selected");
+  });
+
+  const clickedInnerArticle = event.currentTarget;
+  clickedInnerArticle.classList.add("selected");
+}
+
 function renderTables() {
   const container = document.querySelector("#booking");
   container.innerHTML = "";
 
-  tabData.forEach((item, index) => {
+  showsInfo.forEach((item) => {
     const outerArticle = document.createElement("article");
     outerArticle.classList.add("shows__booking");
 
@@ -53,20 +42,27 @@ function renderTables() {
     list.classList.add("shows__table-container");
 
     Object.keys(item).forEach((key, keyIndex) => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("shows__table-row");
+      if (keyIndex !== 0) {
+        const listItem = document.createElement("li");
+        listItem.classList.add("shows__table-row");
 
-      const header = document.createElement("h3");
-      header.textContent = key;
-      listItem.appendChild(header);
-      header.classList.add("shows__date");
+        const header = document.createElement("h3");
+        header.textContent = key;
+        header.classList.add("shows__table-head");
 
-      const value = document.createElement("p");
-      value.textContent = item[key];
-      listItem.appendChild(value);
-      value.classList.add("shows__details");
+        const value = document.createElement("p");
+        value.textContent = item[key];
+        value.classList.add("shows__details");
 
-      list.appendChild(listItem);
+        list.appendChild(listItem);
+        listItem.appendChild(header);
+        listItem.appendChild(value);
+
+        if (keyIndex === 1) {
+          value.classList.add("shows__date-data");
+          value.textContent = new Date().toLocaleDateString();
+        }
+      }
     });
 
     innerArticle.appendChild(list);
@@ -76,6 +72,8 @@ function renderTables() {
 
     outerArticle.appendChild(innerArticle);
     container.appendChild(outerArticle);
+
+    innerArticle.addEventListener("click", handleTableClick);
   });
 
   function handleResize() {
@@ -102,4 +100,3 @@ function renderTables() {
   handleResize();
 }
 
-renderTables();

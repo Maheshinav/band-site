@@ -8,6 +8,7 @@
     <title>Bandsite </title>
     <link rel="stylesheet" href="../styles/bio.css" />
     <link rel="stylesheet" href="../styles/shows.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                 <li class="nav__list-item">
                     <a class="nav__link" href="../index.html">Biography</a>
                 </li>
-                <li class="nav__list-item">
+                <li class="nav__list-item active">
                     <a class="nav__link " href="../pages/shows.html">Shows</a>
                 </li>
             </ul>
@@ -28,20 +29,25 @@
         <main>
             <section class="show-hero">
                 <section class="show-hero__overlay">
-                    <article>
-                        <h3 class="show-hero__sub-heading">
-                            Beautiful Beasts Album
-                        </h3>
-                        <h1 class="show-hero__heading">
-                            Queen of Yellow x
-                            For The Stings
-                        </h1>
+                    <article class="show-hero__content">
+                        <article>
+                            <h3 class="show-hero__sub-heading">
+                                Beautiful Beasts Album
+                            </h3>
+                            <h1 class="show-hero__heading">
+                                Queen of Yellow x
+                                For The Stings
+                            </h1>
+                        </article>
+
+                        <iframe class="show-hero__soundtrack" width="100%" height="300" scrolling="no" frameborder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164046352&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                        </iframe>
                     </article>
-                    <iframe class="show-hero__soundtrack" width="100%" height="300" scrolling="no" frameborder="no"
-                        allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164046352&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 </section>
             </section>
+
             <section class="shows">
                 <h2 class="shows__heading">Shows</h2>
                 <section id="booking" class="shows__table-width">
